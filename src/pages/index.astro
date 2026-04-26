@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Igralište — Playground</title>
+    <meta name="description" content="A place to play, explore, and be free." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-sky-50 text-slate-800 font-sans overflow-x-hidden">
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+      <!-- Background blobs -->
+      <div class="absolute -top-32 -left-32 w-96 h-96 bg-yellow-300 rounded-full opacity-30 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-pink-400 rounded-full opacity-25 blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-300 rounded-full opacity-20 blur-3xl"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <div class="text-7xl mb-6 select-none" aria-hidden="true">🛝</div>
+        <h1 class="text-6xl md:text-8xl font-bold text-slate-900 mb-4" style="font-family: 'Fredoka', sans-serif; letter-spacing: -1px;">
+          Igralište
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-600 mb-10 max-w-xl mx-auto leading-relaxed">
+          A place to swing, slide, and soar — where every day is an adventure.
+        </p>
+        <a
+          href="#explore"
+          class="inline-block bg-amber-400 hover:bg-amber-500 text-slate-900 font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+        >
+          Come play →
+        </a>
+      </div>
+
+      <!-- Bouncing arrow -->
+      <div class="absolute bottom-10 animate-bounce text-slate-400 text-3xl" aria-hidden="true">↓</div>
+    </section>
+
+    <!-- Features -->
+    <section id="explore" class="py-24 px-6 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-4" style="font-family: 'Fredoka', sans-serif;">
+          What's here
+        </h2>
+        <p class="text-center text-slate-500 text-lg mb-16">Everything a great playground needs.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { emoji: "🛝", title: "The Slide", desc: "Zip down at full speed. The bigger the smile, the better." },
+            { emoji: "🕹️", title: "Swings", desc: "Kick your feet up and touch the clouds — or at least try to." },
+            { emoji: "🧗", title: "Climbing Wall", desc: "Reach the top and ring the bell. Every kid can be a champion." },
+            { emoji: "🌳", title: "Shady Corners", desc: "Cool spots under old trees for when the sun gets a bit too enthusiastic." },
+            { emoji: "🎨", title: "Creative Zone", desc: "Chalk, paint, and imagination. Leave your mark — it'll wash off, we promise." },
+            { emoji: "🤸", title: "Open Field", desc: "No rules, no boundaries. Just grass, sky, and whatever game you invent." },
+          ].map(({ emoji, title, desc }) => (
+            <div class="bg-sky-50 rounded-3xl p-8 flex flex-col items-start gap-4 hover:shadow-md transition-shadow duration-200 border border-sky-100">
+              <span class="text-4xl" aria-hidden="true">{emoji}</span>
+              <h3 class="text-xl font-semibold text-slate-900" style="font-family: 'Fredoka', sans-serif;">{title}</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials / Vibe -->
+    <section class="py-24 px-6 bg-amber-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-16" style="font-family: 'Fredoka', sans-serif;">
+          Voices from the playground
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { quote: "Best slide in the whole city. I went down seventeen times.", author: "Maja, age 7" },
+            { quote: "My kids never want to leave. Honestly, neither do I.", author: "Tomislav, dad" },
+            { quote: "The climbing wall is actually hard. I love it.", author: "Luka, age 10" },
+          ].map(({ quote, author }) => (
+            <blockquote class="bg-white rounded-3xl p-8 shadow-sm border border-amber-100 text-left">
+              <p class="text-slate-700 text-lg leading-relaxed mb-4">"{quote}"</p>
+              <footer class="text-sm text-amber-600 font-medium">— {author}</footer>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / Visit -->
+    <section class="py-24 px-6 bg-gradient-to-br from-sky-400 to-blue-500 text-white text-center">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-6xl mb-6" aria-hidden="true">📍</div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6" style="font-family: 'Fredoka', sans-serif;">
+          Find us
+        </h2>
+        <p class="text-sky-100 text-xl mb-8 leading-relaxed">
+          Open every day from sunrise to sunset.<br />
+          Come as you are. Leave happier.
+        </p>
+        <div class="inline-flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://maps.google.com"
+            class="bg-white text-sky-600 font-semibold px-8 py-4 rounded-full hover:bg-sky-50 transition-colors duration-200 shadow-lg"
+          >
+            Get directions
+          </a>
+          <a
+            href="mailto:hello@igraliste.hr"
+            class="bg-sky-600 text-white font-semibold px-8 py-4 rounded-full border-2 border-white/30 hover:bg-sky-700 transition-colors duration-200"
+          >
+            Say hello
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-slate-900 text-slate-400 text-center text-sm">
+      <p>© 2026 Igralište. Made with ☀️ and good vibes.</p>
+    </footer>
+
+  </body>
+</html>
